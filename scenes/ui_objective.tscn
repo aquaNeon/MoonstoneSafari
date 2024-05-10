@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://72dqh8s54136"]
+
+[ext_resource type="FontFile" uid="uid://ofie55w5kgmn" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_7dwq7"]
+[ext_resource type="Script" path="res://scripts/ui_objective.gd" id="1_8mvc6"]
+
+[node name="Objective" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8mvc6")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 568.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7dwq7")
+theme_override_font_sizes/font_size = 40
+text = "
+Stranded on a unknown planet, you need to collect moonstones to recharge your ship. 
+
+
+Find your ship, when you have what you need. And beware of strange creatures. "
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -40.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="btn_back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/btn_back" to="." method="_on_btn_back_pressed"]

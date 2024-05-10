@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbq8p14t4wtxn"]
+
+[ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_h1js6"]
+[ext_resource type="Texture2D" uid="uid://d1suo12ey4rod" path="res://assets/textures/SpaceShip.png" id="1_ovfyh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7ti2"]
+atlas = ExtResource("1_ovfyh")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2laul"]
+atlas = ExtResource("1_ovfyh")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5w8a"]
+atlas = ExtResource("1_ovfyh")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18fut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7ti2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2laul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5w8a")
+}],
+"loop": false,
+"name": &"open",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wynch"]
+radius = 15.0333
+
+[node name="spaceship" type="Area2D"]
+script = ExtResource("1_h1js6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_18fut")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wynch")

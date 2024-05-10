@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cls7lesjfikv5"]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_5e7wn"]
+[ext_resource type="FontFile" uid="uid://4bn24xx4kuuw" path="res://assets/fonts/PixelOperator8.ttf" id="2_hvw7h"]
+[ext_resource type="Texture2D" uid="uid://di5q1qtwampq4" path="res://assets/textures/moonstone.png" id="3_gsyfk"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_5e7wn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoonstoneImage" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_gsyfk")
+expand_mode = 2
+
+[node name="StoneCount" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hvw7h")
+theme_override_font_sizes/font_size = 16
+text = "Moonstones count"

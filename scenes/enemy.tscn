@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://b75xh43wkojow"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_ld200"]
+[ext_resource type="Texture2D" uid="uid://4kc66v0f0flh" path="res://assets/textures/enemy_sprite.png" id="1_ypd4i"]
+[ext_resource type="PackedScene" uid="uid://duwx215iiwlog" path="res://scenes/killzone.tscn" id="2_bl620"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keoob"]
+atlas = ExtResource("1_ypd4i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4auqv"]
+atlas = ExtResource("1_ypd4i")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe3ic"]
+atlas = ExtResource("1_ypd4i")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib8xt"]
+atlas = ExtResource("1_ypd4i")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvmgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keoob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4auqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe3ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib8xt")
+}],
+"loop": true,
+"name": &"hunt",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u7p4l"]
+radius = 6.0
+height = 12.0
+
+[node name="enemy" type="Node2D"]
+script = ExtResource("1_ld200")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pvmgw")
+animation = &"hunt"
+autoplay = "hunt"
+frame_progress = 0.443477
+
+[node name="killzone" parent="." instance=ExtResource("2_bl620")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_u7p4l")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 2)
+target_position = Vector2(10, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 2)
+target_position = Vector2(-10, 0)
