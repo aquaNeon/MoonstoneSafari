@@ -11,6 +11,3 @@ func _ready():
 # Function to update the score label in the HUD
 func update_score(score):
 	stone_count_label.text = str(score) + "/10"
-	if score >= 10:
-		emit_signal("moonstones_full")
-	

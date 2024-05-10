@@ -11,5 +11,3 @@ func add_point():
 	score += 1
 	hud.update_score(score)
 	emit_signal("moonstone_count_updated", score)
-
-
