@@ -6,9 +6,11 @@ extends CanvasLayer
 func _ready():
 	var texture = load("res://assets/textures/moonstone.png")
 	moonstone_image.texture = texture
-	$HBox/StoneCount.text =" 0/20"
+	$HBox/StoneCount.text =" 0/10"
 
 # Function to update the score label in the HUD
 func update_score(score):
 	stone_count_label.text = str(score) + "/10"
+	if score >= 10:
+		emit_signal("moonstones_full")
 	
