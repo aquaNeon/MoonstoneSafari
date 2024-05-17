@@ -586,7 +586,7 @@ position = Vector2(1712, 24)
 unique_name_in_owner = true
 
 [node name="player" parent="." instance=ExtResource("1_gyphy")]
-position = Vector2(-174, -40)
+position = Vector2(1477, -8)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0, -40)
@@ -619,6 +619,39 @@ position = Vector2(1225, 323)
 
 [node name="moonstone13" parent="moonstones" instance=ExtResource("4_phanw")]
 position = Vector2(1622, 50)
+
+[node name="moonstone14" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1614, 50)
+
+[node name="moonstone15" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1606, 49)
+
+[node name="moonstone16" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1598, 49)
+
+[node name="moonstone17" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1590, 50)
+
+[node name="moonstone18" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1582, 51)
+
+[node name="moonstone19" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1574, 50)
+
+[node name="moonstone20" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1566, 50)
+
+[node name="moonstone21" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1543, 50)
+
+[node name="moonstone22" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1535, 49)
+
+[node name="moonstone23" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1527, 50)
+
+[node name="moonstone24" parent="moonstones" instance=ExtResource("4_phanw")]
+position = Vector2(1527, 50)
 
 [node name="moonstone6" parent="moonstones" instance=ExtResource("4_phanw")]
 position = Vector2(752, 232)

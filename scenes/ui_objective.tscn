@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://72dqh8s54136"]
+[gd_scene load_steps=6 format=3 uid="uid://72dqh8s54136"]
 
 [ext_resource type="FontFile" uid="uid://ofie55w5kgmn" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_7dwq7"]
 [ext_resource type="Script" path="res://scripts/ui_objective.gd" id="1_8mvc6"]
+[ext_resource type="FontFile" uid="uid://4bn24xx4kuuw" path="res://assets/fonts/PixelOperator8.ttf" id="3_hfrfc"]
+
+[sub_resource type="Gradient" id="Gradient_xspaw"]
+offsets = PackedFloat32Array(0, 0.195833, 0.222917, 0.566667, 0.997917)
+colors = PackedColorArray(0.219608, 0.0117647, 0.341176, 1, 0.643137, 0.941176, 0.34902, 1, 0.054902, 0.054902, 0.164706, 1, 0.134525, 0.074966, 0.24206, 1, 0.580392, 0.466667, 0.509804, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fphwv"]
+gradient = SubResource("Gradient_xspaw")
 
 [node name="Objective" type="Control"]
 layout_mode = 3
@@ -12,17 +20,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8mvc6")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 568.0
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_fphwv")
 
-[node name="Label" type="Label" parent="VBoxContainer2"]
-layout_mode = 2
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -432.0
+offset_top = -235.0
+offset_right = 432.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_7dwq7")
 theme_override_font_sizes/font_size = 40
-text = "
-Stranded on a unknown planet, you need to collect moonstones to recharge your ship. 
+text = "Stranded on a unknown planet, you need to collect moonstones to recharge your ship. 
 
 
 Find your ship, when you have what you need. And beware of strange creatures. "
@@ -30,19 +53,22 @@ autowrap_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -22.5
-offset_top = -40.0
-offset_right = 22.5
-grow_horizontal = 2
+offset_left = 40.0
+offset_top = -98.0
+offset_right = 170.0
+offset_bottom = -58.0
 grow_vertical = 0
 
 [node name="btn_back" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
-text = "Back"
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_hfrfc")
+text = "BACK"
+icon_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/btn_back" to="." method="_on_btn_back_pressed"]

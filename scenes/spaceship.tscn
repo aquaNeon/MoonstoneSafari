@@ -33,14 +33,19 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wynch"]
-radius = 15.0333
+radius = 22.561
 
 [node name="spaceship" type="Area2D"]
+visibility_layer = 3
+collision_mask = 2
 script = ExtResource("1_h1js6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.53125, 1.53125)
 sprite_frames = SubResource("SpriteFrames_18fut")
 animation = &"open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wynch")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,13 +1,26 @@
 extends Control
 
+@onready var game_over_label = $GameOverLabel
+@onready var you_win_label = $YouWinLabel
+@onready var name_label = $NameLabel
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	_initialize()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _initialize():
+
+	# Hide both labels initially
+	game_over_label.hide()
+	you_win_label.hide()
+
+	# Show the appropriate label based on the game result
+	if Global.game_result == "win":
+		you_win_label.show()
+		name_label.hide()
+		
+	elif Global.game_result == "lose":
+		game_over_label.show()
+		name_label.hide()
 
 func _on_btn_start_pressed():
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
@@ -17,3 +30,4 @@ func _on_btn_quit_pressed():
 
 func _on_btn_objective_pressed():
 	get_tree().change_scene_to_file("res://scenes/ui_objective.tscn")
+

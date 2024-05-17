@@ -1,15 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjtxjb58s28cu"]
+[gd_scene load_steps=3 format=3 uid="uid://bjtxjb58s28cu"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_5wmc7"]
 [ext_resource type="FontFile" uid="uid://ofie55w5kgmn" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_msb0j"]
-[ext_resource type="FontFile" uid="uid://4bn24xx4kuuw" path="res://assets/fonts/PixelOperator8.ttf" id="3_f3k6b"]
-
-[sub_resource type="Gradient" id="Gradient_nifo0"]
-offsets = PackedFloat32Array(0.11875, 0.195833, 0.2625, 0.566667, 0.997917)
-colors = PackedColorArray(0.219608, 0.0117647, 0.341176, 1, 0.643137, 0.941176, 0.34902, 1, 0.054902, 0.054902, 0.164706, 1, 0.134525, 0.074966, 0.24206, 1, 0.580392, 0.466667, 0.509804, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_el2r5"]
-gradient = SubResource("Gradient_nifo0")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -19,15 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5wmc7")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_el2r5")
 
 [node name="GameOverLabel" type="Label" parent="."]
 visible = false
@@ -48,28 +31,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_msb0j")
 theme_override_font_sizes/font_size = 64
 text = "GAME OVER "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NameLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -292.0
-offset_top = -65.5
-offset_right = 292.0
-offset_bottom = 65.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.956863, 0.956863, 0.956863, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_msb0j")
-theme_override_font_sizes/font_size = 64
-text = "MOONSTONE
-SAFARI"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -108,17 +69,14 @@ grow_vertical = 0
 
 [node name="btn_start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_f3k6b")
 text = "START"
 
 [node name="btn_objective" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_f3k6b")
 text = "OBJECTIVE"
 
 [node name="btn_quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_f3k6b")
 text = "QUIT"
 
 [connection signal="pressed" from="VBoxContainer/btn_start" to="." method="_on_btn_start_pressed"]
